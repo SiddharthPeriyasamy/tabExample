@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stud=[
+            {
+                reg : 1,
+                name : "siddharth",
+                active:true,
+                department:["department1","department2"],
+                marks:{
+                    "HTML":70,
+                    "CSS":80
+                }
+            },
+            {
+                reg : 2,
+                name : "vignesh",
+                active:true,
+                department:["department3","department4"],
+                marks:{
+                    "HTML":100,
+                    "CSS":59
+                }
+            },
+            {
+                reg : 3,
+                name : "venkat",
+                active:false,
+                department:["department1","department3"],
+                marks:{
+                    "HTML":56,
+                    "CSS":98
+                }
+            },
+            {
+                reg : 4,
+                name : "rishi",
+                active:true,
+                department:["department4","department2"],
+                marks:{
+                    "HTML":64,
+                    "CSS":89
+                }
+            }
+        ];
+        let n=stud.length;
+        document.write("<table border=1>");
+            document.write("<tr>");  
+            for(let temp in stud[0]){
+                document.write("<td>"+temp+"</td>");
+            }
+            document.write("</tr>");
+         for(let i=0;i<n;i++){
+            document.write("<tr>");
+         for(let j in stud[i]){
+            if((j!=="department")&&(j!=="marks")){
+                
+                document.write("<td>"+stud[i][j]+"</td>");
+            }
+            else if(j==="department"){
+                let u=stud[i][j].length;
+                // document.write(j+":");
+                document.write("<td>");
+                for(let k=0;k<u;k++){
+                    document.write("("+(k+1)+")"+stud[i][j][k]+"<br>");
+                }
+                document.write("</td>");
+            }else if(j==="marks"){
+                // document.write(j+":");
+                document.write("<td>");
+                for(let l in stud[i][j]){
+                    document.write(l+":");
+                    document.write(stud[i][j][l]+"<br>");
+                }
+                document.write("</td>")
+            }
+        }
+        // document.write("<br>");
+        document.write("</tr>");
+       }
+       document.write("</table>");
+    </script>
+</body>
+</html>
